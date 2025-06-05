@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
     <script src="https://unpkg.com/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://unpkg.com/layui@2.7.6/dist/layui.js"></script>
-    <title>CM订阅转换</title>
+    <title>一分机场订阅转换</title>
 </head>
 
 <body>
@@ -24,14 +24,14 @@
                 fill="currentColor" class="octo-body"></path>
         </svg></a>
     <header>
-        <h1>CM订阅转换</h1>
+        <h1>一分机场订阅转换</h1>
     </header>
     <div class="layui-form form" lay-filter="optionsForm">
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label required">原订阅链接:</label>
             <div class="layui-input-block">
                 <textarea name="url" lay-filter="url" required lay-verify="required"
-                    placeholder="支持订阅或ss/ssr/vmess链接，多个链接每行一个或用 | 分隔" class="layui-textarea"></textarea>
+                    placeholder="支持订阅或ss/ssr/vmess链接，多个链接每行一个或用 | 分隔，vless和HY2协议需要后端支持" class="layui-textarea"></textarea>
             </div>
         </div>
         <div class="layui-form-item">
@@ -100,13 +100,15 @@
         <div class="layui-form-item inline">
             <label class="layui-form-label">跳过TLS验证:</label>
             <div class="layui-input-block">
-                <input type="checkbox" name="scv" lay-filter="scv" value="true" lay-skin="switch" lay-text="ON|OFF">
+                <input type="checkbox" name="scv" lay-filter="scv" value="true" lay-skin="switch" lay-text="ON|OFF"
+                    checked>
             </div>
         </div>
         <div class="layui-form-item inline">
             <label class="layui-form-label">启用UDP</label>
             <div class="layui-input-block">
-                <input type="checkbox" name="udp" lay-filter="udp" value="true" lay-skin="switch" lay-text="ON|OFF">
+                <input type="checkbox" name="udp" lay-filter="udp" value="true" lay-skin="switch" lay-text="ON|OFF"
+                    checked>
             </div>
         </div>
         <!-- <div class="layui-form-item inline">
