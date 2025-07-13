@@ -54,14 +54,14 @@ export const targetConfig = [{
     value: 'loon'
 }];
 export const backendConfig = [{
+    label: 'url.v1.mk(肥羊提供-增强型后端)',
+    value: 'https://url.v1.mk/sub?'
+}, {
     label: 'subapi.cmliussss.net(CM提供-负载均衡后端)',
     value: 'https://subapi.cmliussss.net/sub?'
 }, {
     label: 'v.id9.cc(品云提供-稳定后端)',
     value: 'https://v.id9.cc/sub?'
-}, {
-    label: 'url.v1.mk(肥羊提供-增强型后端)',
-    value: 'https://url.v1.mk/sub?'
 }, {
     label: 'sub.d1.mk(肥羊提供-备用后端)',
     value: 'https://sub.d1.mk/sub?'
@@ -70,30 +70,6 @@ export const backendConfig = [{
     value: 'http://localhost:25500/sub?'
 }];
 export const externalConfig = [{
-    label: 'CM规则',
-    options: [{
-        label: 'CM_Online 默认版 识别港美地区(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini'
-    }, {
-        label: 'CM_Online_MultiCountry 识别港美地区 负载均衡(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry.ini'
-    }, {
-        label: 'CM_Online_MultiCountry_CF 识别港美地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_MultiCountry_CF.ini'
-    }, {
-        label: 'CM_Online_Full 识别多地区分组(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full.ini'
-    }, {
-        label: 'CM_Online_Full_CF 识别多地区、CloudFlareCDN 分组 Worker节点专用(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_CF.ini'
-    }, {
-        label: 'CM_Online_Full_MultiMode 识别多地区 负载均衡(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini'
-    }, {
-        label: 'CM_Online_Full_MultiMode_CF 识别多地区、CloudFlareCDN 负载均衡 Worker节点专用(与Github同步)',
-        value: 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode_CF.ini'
-    }]
-},{
     label: 'ACL4SSR',
     options: [{
         label: 'ACL4SSR_Online 默认版 分组比较全(与Github同步)',
