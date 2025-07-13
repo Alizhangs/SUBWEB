@@ -4,21 +4,6 @@ import { backendConfig, externalConfig, targetConfig } from './config';
 
 let subUrl = '';
 
-layui.use(['form', 'layer'], () => {  // 确保加载 layer 模块（LayUI 的弹窗组件）
-    const form = layui.form;
-    const layer = layui.layer;
-
-    // ✅ 在这里添加弹窗代码（页面加载后立即执行）
-    layer.alert('⚠️ 重要提示 ⚠️<br><br>请务必修改后端地址为肥羊后端 URL：<br><b>https://url.v1.mk</b>', {
-        title: '配置提醒',
-        icon: 0,  // 0=提示图标
-        closeBtn: 0,  // 不显示关闭按钮（强制用户阅读）
-        btn: ['我明白了'],  // 只有一个确认按钮
-        yes: function() {
-            layer.closeAll();  // 关闭弹窗
-        }
-    });
-
 function copyText(copyStr: string) {
     navigator.clipboard.writeText(copyStr).then(() => {
         layui.layer.msg('复制成功~', { icon: 1 });
@@ -56,9 +41,26 @@ function generateSubUrl(data: Options) {
     copyText(subUrl);
 }
 
-layui.use(['form'], () => {
+layui.use(['form', 'layer'], () => {
     const form = layui.form;
+    const layer = layui.layer;
 
+    // ✅ 新增：页面加载时强制弹窗提示修改后端地址
+    layer.alert(`
+        ⚠️ <b>重要提示</b> ⚠️<br><br>
+        请务必修改后端地址为肥羊推荐 URL：<br>
+        <b style="color:red">https://url.v1.mk</b>
+    `, {
+        title: '配置提醒',
+        icon: 0,          // 提示图标
+        closeBtn: 0,      // 隐藏关闭按钮（强制用户阅读）
+        btn: ['我明白了'], // 单按钮确认
+        yes: function() {
+            layer.closeAll();
+        }
+    });
+
+    // 以下为原有逻辑
     let childrenHtml = '';
     targetConfig.forEach(option => {
         childrenHtml += `<option value="${option.value}">${option.label}</option>`;
@@ -82,7 +84,6 @@ layui.use(['form'], () => {
     $('#backendSelecter').append(childrenHtml);
     form.render('select', 'optionsForm');
 
-
     form.on('submit(generate)', target => {
         const data = target.field as Options;
         generateSubUrl(data);
@@ -94,5 +95,3 @@ layui.use(['form'], () => {
         window.open(url);
     });
 });
-
-
